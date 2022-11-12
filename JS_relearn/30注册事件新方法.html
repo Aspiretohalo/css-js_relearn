@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>传统</button>
+    <button>监听</button>
+    <script>
+        var btns = document.querySelectorAll('button')
+        // 1.传统注册事件方式的注册功能具有唯一性
+        btns[0].onclick = function () {
+            alert('ok')
+        }
+        btns[0].onclick = function () {
+            alert('ok222')
+        }
+
+        // 2.方法监听注册
+        // eventTarget.addEventListener(type,function(){})
+        btns[1].addEventListener('click', function () {
+            alert('yes')
+        })
+        btns[1].addEventListener('click', function () {
+            alert('yes222')
+        })
+    </script>
+</body>
+
+</html>

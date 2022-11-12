@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getDate() {
+            var date = new Date();
+            // 返回当前日期的年
+            console.log(date.getFullYear());
+            // 月份-1
+            console.log(date.getMonth() + 1);
+            // 当前几号
+            console.log(date.getDate());
+            // 周几,周日是0
+            console.log(date.getDay());
+
+            // 写一个 2022年9月20日 星期二
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var dates = date.getDate();
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            var day = date.getDay();
+            // console.log(year + '年' + month + '月' + dates + '日' + '' + arr[day]);
+            return year + '年' + month + '月' + dates + '日' + '' + arr[day];
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

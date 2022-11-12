@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="j_cball">
+                    <td>全选</td>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <td>
+                        <input type="checkbox" id="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="">
+                    </td>
+                </tr>
+                <script>
+                    // 全选和取消全选
+                    var j_cball = document.getElementById('j_cball')
+                    var j_tbs = document.getElementById('j_tb').getElementsByTagName('input')
+                    j_cball.onclick = function () {
+                        // this.checked
+                        for (var i = 0; i < j_tbs.length; i++) {
+                            // 跟着全选框改变
+                            j_tbs[i].checked = this.checked
+                        }
+                    }
+                    // 下面的选框都勾选了之后，全选也会勾上
+                    for (var i = 0; i < j_tbs.length; i++) {
+                        // 点击每一个小选框都会判断是否已经全部勾上
+                        j_tbs[i].onclick = function () {
+                            // flag控制全选按钮是否被选中
+                            var flag = true
+                            for (var i = 0; i < j_tbs.length; i++) {
+                                if (!j_tbs[i].checked) {
+                                    flag = false
+                                    break
+                                }
+                            }
+                            j_cball.checked = flag
+                        }
+                    }
+                    // }
+                </script>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

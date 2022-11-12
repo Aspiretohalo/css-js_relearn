@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <script>
+        // window.setTimeout(调用函数, [延迟的毫秒数])
+        // 这个Window可省略
+        // 这也是一个回调函数
+        timer = setTimeout(function () {
+            alert('boom')
+        }, 5000)
+        var btn = document.querySelector('button')
+        btn.addEventListener('click', function () {
+            // 停止定时器
+            clearTimeout(timer)
+
+        })
+    </script>
+</body>
+
+</html>

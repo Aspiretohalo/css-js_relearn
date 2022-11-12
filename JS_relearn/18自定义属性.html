@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        <div id="demo"></div>
+        var div = document.querySelector('div')
+        // 1.获取元素属性值
+        // (1)Element.属性  获取元素本身自带的属性
+        console.log(div.id);
+
+        // (2)Element.getAttribute('属性')  获得自定义属性
+        console.log(div.getAttribute('id'));
+
+        // 2.设置元素属性值
+        // (1)element.属性='值'  设置内置属性值
+        div.id = 'test'
+        div.className = 'navs'
+
+        // (2)element.setAttribute('属性','值')  
+        div.setAttribute('index', 2)
+        div.setAttribute('class', 'footer')
+
+        // 3.移除属性removeAttribute(属性)
+        div.removeAttribute('index')
+    </script>
+</body>
+
+</html>

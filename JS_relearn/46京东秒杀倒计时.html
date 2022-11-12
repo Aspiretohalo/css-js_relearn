@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+            color: #fff;
+            line-height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 倒计时是不断变化的，因此需要定时器来自动变化 -->
+    <!-- 三个黑色盒子里面分别存放时分秒 -->
+    <!-- 三个黑色盒子用innerHTML放入计算的小时分钟秒数 -->
+    <div>
+        <span class="hour">1</span>
+        <span class="minute">2</span>
+        <span class="second">3</span>
+    </div>
+    <script>
+        var hour = document.querySelector('.hour')
+        var minute = document.querySelector('.minute')
+        var second = document.querySelector('.second')
+        // 返回目标时间的总毫秒数
+        var inputTime = +new Date('2022-9-23 19:00:00');
+
+        countDown()
+        // 输入的时间就是目标时间
+        setInterval(countDown, 1000)
+        function countDown(time) {
+            // 返回当前时间总毫秒数
+            var nowTime = +new Date();
+
+            // 剩余时间秒数
+            var times = (inputTime - nowTime) / 1000;
+            // 计算小时
+            h = parseInt(times / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h
+            // 计算分数
+            m = parseInt(times / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            minute.innerHTML = m
+            // 计算当前秒数
+            s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s;
+            second.innerHTML = s
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .search {
+            position: relative;
+            width: 178px;
+            height: 100px;
+        }
+
+        .con {
+            display: none;
+            position: absolute;
+            top: 40px;
+            width: 150px;
+            height: 30px;
+            background-color: pink;
+            font-size: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search">
+        <div class="con">123</div>
+        <input type="text" placeholder="请输入你的快递单号" class="jd">
+    </div>
+    <script>
+        var ipt = document.querySelector('input')
+        var con = document.querySelector('.con')
+        ipt.addEventListener('keyup', function (e) {
+            con.innerHTML = this.value
+            if (ipt.value === '') {
+                con.style.display = 'none'
+            } else {
+                con.style.display = 'block'
+            }
+            if (e.keyCode === 83) {
+                ipt.focus();
+            }
+        })
+        ipt.addEventListener('blur', function (e) {
+            con.style.display = 'none'
+        })
+        ipt.addEventListener('focus', function (e) {
+            if (ipt.value !== '')
+                con.style.display = 'block'
+        })
+
+    </script>
+</body>
+
+</html>

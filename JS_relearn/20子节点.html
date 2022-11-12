@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>文本</li>
+        <li>文本</li>
+        <li>文本</li>
+        <li>文本</li>
+        <li>文本</li>
+    </ul>
+    <script>
+        var ul = document.querySelector('ul')
+        var lis = ul.querySelectorAll('li')
+        //1. childNodes所有的子节点包含元素节点、文本节点等
+        console.log(ul.childNodes);
+
+        // 2.children获取所有的子元素节点 （常用）
+        console.log(ul.children);
+    </script>
+</body>
+
+</html>
